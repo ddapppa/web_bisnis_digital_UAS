@@ -211,7 +211,7 @@ section {
 }
 
 .section-badge {
-     background: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.08);
     color: var(--primary-color);
     padding: 8px 24px;
     border-radius: 50px;
@@ -1048,5 +1048,6 @@ section {
         display: none;
     }
 }
+
 
 
