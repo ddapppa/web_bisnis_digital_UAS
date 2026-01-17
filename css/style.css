@@ -676,123 +676,101 @@ section {
     border-top: 1px solid rgba(255,255,255,0.1);
     color: var(--text-light);
 }
-
-/* MOBILE RESPONSIVE FIX (TIMPA BAGIAN BAWAH) */
+/* =========================================
+   MOBILE RESPONSIVE FIX (NO BURGER VERSION)
+   ========================================= */
 
 @media screen and (max-width: 1023px) {
-    /* 1. HILANGKAN ELEMEN PENGGANGGU DI HP */
-    .problem-characters,
-    .desktop-only,
-    .char-left,
-    .char-right,
-    .question-mark {
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        position: absolute !important;
-        z-index: -9999 !important;
+    /* 1. NAVBAR: Logo Kiri, Tombol Kanan, Menu Tengah HILANG */
+    .navbar {
+        padding: 15px 0;
     }
 
-    .container {
-        padding: 0 20px; 
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* 3. HERO SECTION (Header Utama) */
-    .hero {
-        padding: 60px 0 40px;
-        text-align: center;
-        height: auto; 
-        min-height: auto;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .hero-text h1 {
-        font-size: 2.2rem; 
-        line-height: 1.3;
-        margin-bottom: 15px;
-    }
-
-    .hero-text .subheadline {
-        font-size: 1rem;
-        margin-bottom: 25px;
-        padding: 0 10px;
-    }
-
-    /* Tombol di Hero */
-    .hero-cta {
-        flex-direction: column;
-        gap: 15px;
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between; /* Logo dikiri, tombol dikanan */
         align-items: center;
         width: 100%;
     }
 
-    .hero-cta .btn-primary, 
-    .hero-cta .btn-secondary {
-        width: 100%; 
-        max-width: 300px; 
-        display: block;
+    /* Hilangkan menu text (Home, Fitur, dll) di HP */
+    .nav-menu {
+        display: none !important;
     }
 
-    /* Stats (Angka-angka) */
-    .hero-stats {
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        margin-top: 20px;
-    }
-
-    .problem {
-        padding: 40px 0;
-        overflow: hidden;
-    }
-
-    .problem-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    .problem-item {
-        width: 100%;
+    /* Logo Agak Kecil Dikit */
+    .logo h2 {
+        font-size: 1.2rem; 
         margin: 0;
     }
 
+    /* Tombol Daftar Kecilin Dikit Biar Muat */
+    .btn-primary.nav-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 2. HERO SECTION */
+    .hero {
+        padding-top: 30px;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Hilangkan Gambar Hero & Karakter Problem di HP */
+    .hero-image, 
+    .problem-characters,
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* Judul Hero */
+    .hero-text h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    /* Tombol Hero Atas Bawah */
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .hero-cta a {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    /* 3. RAPIDKAN SEMUA GRID JADI 1 KOLOM */
     .features-grid, 
     .pricing-grid, 
+    .problem-grid,
+    .testimonials-grid, /* Note: perhatikan nama classnya di HTML */
     .testimonial-grid,
     .steps-grid {
-        grid-template-columns: 1fr; 
-        gap: 30px;
-    }
-    
-    .step-arrow {
-        display: none; 
-    }
-    
-    .step-card {
-        margin-bottom: 20px;
+        grid-template-columns: 1fr; /* Paksa 1 kolom */
+        display: grid;
+        gap: 20px;
     }
 
-    /* 7. FOOTER */
+    /* Khusus Testimonial & Problem biar gak gepeng */
+    .problem-grid, .testimonial-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Footer */
     .footer-content {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 30px;
     }
     
-    .footer-col {
-        margin-bottom: 20px;
-    }
-
-    .social-links {
-        align-items: center;
-    }
+    .step-arrow { display: none; }
 }
