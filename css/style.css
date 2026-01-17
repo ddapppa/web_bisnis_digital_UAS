@@ -1,3 +1,6 @@
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +37,9 @@ body {
     padding: 0 20px;
 }
 
-/* BUTTONS */
+/* =========================================
+   2. BUTTONS
+   ========================================= */
 .btn-primary {
     background: var(--primary-color);
     color: var(--white);
@@ -93,7 +98,9 @@ body {
     color: var(--white);
 }
 
-/* NAVIGATION */
+/* =========================================
+   3. NAVIGATION (HEADER REFERENSI)
+   ========================================= */
 .navbar {
     background: var(--white);
     padding: 20px 0;
@@ -132,7 +139,9 @@ body {
     color: var(--primary-color);
 }
 
-/* HERO SECTION */
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
 .hero {
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
     padding: 80px 0;
@@ -141,6 +150,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden; 
+    z-index: 1;
 }
 
 .hero-content {
@@ -149,7 +159,7 @@ body {
     gap: 60px;
     align-items: center;
     position: relative;
-    z-index: 2; 
+    z-index: 10; /* Pastikan di atas bubbles */
 }
 
 .hero-text .badge {
@@ -200,577 +210,231 @@ body {
     font-size: 0.9rem;
 }
 
-/* SECTION STYLES */
-section {
-    padding: 80px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-badge {
-    background: var(--primary-color); 
-    color: #FFFFFF; 
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* PROBLEM SECTION */
-.problem {
-    background: var(--bg-light);
-    position: relative;
-    /* overflow: hidden; -> DIHAPUS biar aman di HP */
-}
-
-/* Default Mobile: Sembunyikan Karakter */
-.desktop-only { display: none; }
-.problem-characters { display: none; }
-
-
-.problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    position: relative;
-    z-index: 2;
-}
-
-.problem-item {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.problem-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Container Icon Silang Tumpul */
-.problem-icon.cross-rounded {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 15px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Garis Pertama (Miring Kanan) */
-.problem-icon.cross-rounded::before {
-    content: '';
-    position: absolute;
-    width: 8px; 
-    height: 100%; 
-    background-color: var(--primary-color); 
-    border-radius: 10px; 
-    transform: rotate(45deg);
-}
-
-/* Garis Kedua (Miring Kiri) */
-.problem-icon.cross-rounded::after {
-    content: '';
-    position: absolute;
-    width: 8px; 
-    height: 100%; 
-    background-color: var(--primary-color);
-    border-radius: 10px; 
-    transform: rotate(-45deg);
-}
-
-
-.problem-item h3 {
-    color: var(--text-dark);
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.problem-item p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
-
-/* FEATURES SECTION */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
-}
-
-.feature-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-}
-
-.feature-card h3 {
-    color: var(--text-dark);
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.feature-card p {
-    color: var(--text-light);
-}
-
-.how-it-works {
-    background: var(--primary-light);
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr;
-    gap: 20px;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.step-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    position: relative;
-}
-
-.step-number {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary-color);
-    color: var(--white);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.step-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-}
-
-.step-card h3 {
-    margin-bottom: 15px;
-    color: var(--text-dark);
-    font-weight: 600;
-}
-
-.step-card p {
-    color: var(--text-light);
-}
-
-.step-arrow {
-    font-size: 3rem;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* PRICING SECTION */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.pricing-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.pricing-card.featured {
-    border-color: var(--primary-color);
-    transform: scale(1.05);
-}
-
-.popular-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--secondary-color);
-    color: var(--white);
-    padding: 6px 20px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.pricing-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-.price {
-    margin-bottom: 30px;
-}
-
-.price .currency {
-    font-size: 1.2rem;
-    color: var(--text-light);
-}
-
-.price .amount {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.price .period {
-    font-size: 1rem;
-    color: var(--text-light);
-}
-
-.pricing-features {
-    list-style: none;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-.pricing-features li {
-    padding: 12px 0;
-    color: var(--text-dark);
-    border-bottom: 1px solid var(--bg-light);
-}
-
-/* TESTIMONIALS */
-.testimonials {
-    background: var(--bg-light);
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-.rating {
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.testimonial-card p {
-    color: var(--text-dark);
-    font-style: italic;
-    margin-bottom: 20px;
-    line-height: 1.7;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.author-avatar {
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.testimonial-author h4 {
-    color: var(--text-dark);
-    margin-bottom: 3px;
-    font-weight: 600;
-}
-
-.testimonial-author span {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* CTA SECTION */
-.cta-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--white);
-    text-align: center;
-}
-
-.cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.cta-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.cta-section .btn-primary {
-    background: var(--white);
-    color: var(--primary-color);
-}
-
-.cta-section .btn-primary:hover {
-    background: var(--bg-light);
-}
-
-.cta-section .btn-secondary {
-    border-color: var(--white);
-    color: var(--white);
-}
-
-.cta-section .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
-}
-
-.cta-note {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* FOOTER */
-.footer {
-    background: var(--text-dark);
-    color: var(--white);
-    padding: 60px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-col h3 {
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.footer-col h4 {
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.footer-col p {
-    color: var(--text-light);
-    line-height: 1.8;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-col ul li a:hover {
-    color: var(--primary-color);
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.social-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: var(--text-light);
-}
 /* =========================================
-   MOBILE RESPONSIVE FIX (NO BURGER VERSION)
+   5. ANIMASI GELEMBUNG (YANG BENAR & BAGUS)
    ========================================= */
+.bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; /* Di belakang konten */
+}
 
+/* Desain Gelembung: Kontras & Jelas */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    
+    /* Gradasi Putih ke Biru Muda */
+    background: radial-gradient(circle at 30% 30%, 
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(173, 216, 230, 0.5) 20%, 
+                rgba(33, 150, 243, 0.2) 60%, 
+                rgba(255, 255, 255, 0.1) 100%);
+    
+    /* Shadow & Border */
+    box-shadow: 
+        inset 0 0 15px rgba(255, 255, 255, 0.9), 
+        0 4px 15px rgba(33, 150, 243, 0.3);
+    border: 1.5px solid rgba(135, 206, 250, 0.8);
+    
+    opacity: 0;
+    animation: floatAndPop linear infinite;
+}
+
+/* Kilauan Cahaya (Highlight) */
+.bubble::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 30%;
+    height: 18%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    filter: blur(1px);
+    transform: rotate(-45deg);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}
+
+/* Posisi & Ukuran Gelembung */
+/* KIRI */
+.b1 { width: 60px; height: 60px; left: 5%; top: 12%; animation-duration: 4s; animation-delay: 0s; }
+.b2 { width: 40px; height: 40px; left: 3%; top: 35%; animation-duration: 3.5s; animation-delay: 1s; }
+.b3 { width: 55px; height: 55px; left: 6%; top: 65%; animation-duration: 4.2s; animation-delay: 0.5s; }
+.b4 { width: 35px; height: 35px; left: 2%; top: 85%; animation-duration: 3s; animation-delay: 2s; }
+
+/* TENGAH */
+.b5 { width: 50px; height: 50px; left: 38%; top: 18%; animation-duration: 4.5s; animation-delay: 1.5s; }
+.b6 { width: 45px; height: 45px; left: 62%; top: 25%; animation-duration: 3.8s; animation-delay: 0.8s; }
+.b7 { width: 65px; height: 65px; left: 52%; top: 82%; animation-duration: 5s; animation-delay: 0.2s; }
+
+/* KANAN */
+.b8 { width: 55px; height: 55px; left: 80%; top: 15%; animation-duration: 4s; animation-delay: 1.2s; }
+.b9 { width: 75px; height: 75px; left: 92%; top: 32%; animation-duration: 4.8s; animation-delay: 0.4s; }
+.b10 { width: 40px; height: 40px; left: 88%; top: 80%; animation-duration: 3.2s; animation-delay: 2.5s; }
+
+/* Animasi: Naik Turun -> Meletus */
+@keyframes floatAndPop {
+    0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+    10% { opacity: 1; transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1); }
+    90% { opacity: 1; transform: translateY(-40px) scale(1.1); border-color: rgba(33, 150, 243, 0.9); }
+    95% { opacity: 0.9; transform: translateY(-42px) scale(1.4); background: transparent; border: 2px solid rgba(135, 206, 250, 0.9); }
+    100% { opacity: 0; transform: translateY(-42px) scale(1.8); border: 0; }
+}
+
+/* =========================================
+   6. SECTION STYLES
+   ========================================= */
+section { padding: 80px 0; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-badge { background: var(--primary-color); color: #FFFFFF; padding: 8px 24px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; display: inline-block; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3); }
+.section-header h2 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 15px; font-weight: 700; }
+.section-header p { font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+
+/* =========================================
+   7. PROBLEM SECTION
+   ========================================= */
+.problem { background: var(--bg-light); position: relative; }
+.desktop-only { display: block; }
+.problem-characters { display: none; }
+.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; position: relative; z-index: 2; }
+.problem-item { background: var(--white); padding: 30px; border-radius: 15px; text-align: center; transition: transform 0.3s; }
+.problem-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+/* Icon Silang */
+.problem-icon.cross-rounded { width: 60px; height: 60px; margin: 0 auto 15px; position: relative; display: flex; justify-content: center; align-items: center; }
+.problem-icon.cross-rounded::before, .problem-icon.cross-rounded::after { content: ''; position: absolute; width: 8px; height: 100%; background-color: var(--primary-color); border-radius: 10px; }
+.problem-icon.cross-rounded::before { transform: rotate(45deg); }
+.problem-icon.cross-rounded::after { transform: rotate(-45deg); }
+
+.problem-item h3 { color: var(--text-dark); margin-bottom: 10px; font-weight: 600; }
+.problem-item p { color: var(--text-light); font-size: 0.95rem; }
+
+/* =========================================
+   8. FEATURES SECTION
+   ========================================= */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.feature-card { background: var(--white); padding: 40px 30px; border-radius: 20px; box-shadow: var(--shadow); text-align: center; transition: all 0.3s ease; border: 2px solid transparent; }
+.feature-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--primary-color); }
+.feature-icon { font-size: 4rem; margin-bottom: 20px; }
+.feature-card h3 { color: var(--text-dark); margin-bottom: 15px; font-size: 1.3rem; font-weight: 600; }
+.feature-card p { color: var(--text-light); }
+
+/* =========================================
+   9. HOW IT WORKS
+   ========================================= */
+.how-it-works { background: var(--primary-light); }
+.steps-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 20px; align-items: center; max-width: 1100px; margin: 0 auto; }
+.step-card { background: var(--white); padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); position: relative; }
+.step-number { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: var(--white); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+.step-icon { font-size: 4rem; margin-bottom: 20px; }
+.step-card h3 { margin-bottom: 15px; color: var(--text-dark); font-weight: 600; }
+.step-card p { color: var(--text-light); }
+.step-arrow { font-size: 3rem; color: var(--primary-color); font-weight: bold; }
+
+/* =========================================
+   10. PRICING SECTION
+   ========================================= */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+.pricing-card { background: var(--white); padding: 40px 30px; border-radius: 20px; box-shadow: var(--shadow); text-align: center; border: 2px solid transparent; transition: all 0.3s ease; position: relative; }
+.pricing-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.pricing-card.featured { border-color: var(--primary-color); transform: scale(1.05); }
+.popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--secondary-color); color: var(--white); padding: 6px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; }
+.pricing-card h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--text-dark); font-weight: 700; }
+.price { margin-bottom: 30px; }
+.price .currency { font-size: 1.2rem; color: var(--text-light); }
+.price .amount { font-size: 3rem; font-weight: 700; color: var(--primary-color); }
+.price .period { font-size: 1rem; color: var(--text-light); }
+.pricing-features { list-style: none; margin-bottom: 30px; text-align: left; }
+.pricing-features li { padding: 12px 0; color: var(--text-dark); border-bottom: 1px solid var(--bg-light); }
+
+/* =========================================
+   11. TESTIMONIALS
+   ========================================= */
+.testimonials { background: var(--bg-light); }
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.testimonial-card { background: var(--white); padding: 30px; border-radius: 20px; box-shadow: var(--shadow); }
+.rating { color: var(--secondary-color); font-size: 1.5rem; margin-bottom: 15px; }
+.testimonial-card p { color: var(--text-dark); font-style: italic; margin-bottom: 20px; line-height: 1.7; }
+.testimonial-author { display: flex; align-items: center; gap: 15px; }
+.author-avatar { width: 50px; height: 50px; background: var(--primary-color); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; }
+.testimonial-author h4 { color: var(--text-dark); margin-bottom: 3px; font-weight: 600; }
+.testimonial-author span { color: var(--text-light); font-size: 0.9rem; }
+
+/* =========================================
+   12. CTA SECTION
+   ========================================= */
+.cta-section { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: var(--white); text-align: center; }
+.cta-content h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
+.cta-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+.cta-buttons { display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; }
+.cta-section .btn-primary { background: var(--white); color: var(--primary-color); }
+.cta-section .btn-primary:hover { background: var(--bg-light); }
+.cta-section .btn-secondary { border-color: var(--white); color: var(--white); }
+.cta-section .btn-secondary:hover { background: var(--white); color: var(--primary-color); }
+.cta-note { font-size: 0.9rem; opacity: 0.8; }
+
+/* =========================================
+   13. FOOTER
+   ========================================= */
+.footer { background: var(--text-dark); color: var(--white); padding: 60px 0 20px; }
+.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col h3 { margin-bottom: 20px; font-weight: 700; }
+.footer-col h4 { margin-bottom: 15px; color: var(--primary-color); font-weight: 600; }
+.footer-col p { color: var(--text-light); line-height: 1.8; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--primary-color); }
+.social-links { display: flex; flex-direction: column; gap: 10px; }
+.social-links a { color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+.social-links a:hover { color: var(--primary-color); }
+.footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-light); }
+
+/* =========================================
+   14. MOBILE RESPONSIVE (HEADER REFERENSI: LOGO KIRI - BTN KANAN)
+   ========================================= */
 @media screen and (max-width: 1023px) {
-    /* 1. NAVBAR: Logo Kiri, Tombol Kanan, Menu Tengah HILANG */
-    .navbar {
-        padding: 15px 0;
-    }
-
-    .nav-wrapper {
-        display: flex;
-        justify-content: space-between; /* Logo dikiri, tombol dikanan */
-        align-items: center;
-        width: 100%;
-    }
-
+    /* Navbar: Logo Kiri, Tombol Kanan, Menu Tengah HILANG */
+    .navbar { padding: 15px 0; }
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    
     /* Hilangkan menu text (Home, Fitur, dll) di HP */
-    .nav-menu {
-        display: none !important;
-    }
+    .nav-menu { display: none !important; }
 
     /* Logo Agak Kecil Dikit */
-    .logo h2 {
-        font-size: 1.2rem; 
-        margin: 0;
-    }
+    .logo h2 { font-size: 1.2rem; margin: 0; }
 
     /* Tombol Daftar Kecilin Dikit Biar Muat */
-    .btn-primary.nav-btn {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
+    .btn-primary.nav-btn { padding: 8px 12px; font-size: 0.8rem; }
 
-    /* 2. HERO SECTION */
-    .hero {
-        padding-top: 30px;
-        text-align: center;
-        margin-top: 0;
-    }
+    /* Hero */
+    .hero { padding: 40px 0; min-height: auto; }
+    .hero-content { flex-direction: column; gap: 30px; text-align: center; }
+    .hero-text h1 { font-size: 2rem; line-height: 1.3; }
+    .hero-text .subheadline { font-size: 1rem; padding: 0 10px; }
+    .hero-cta { flex-direction: column; width: 100%; gap: 15px; }
+    .hero-cta a { width: 100%; max-width: 320px; margin: 0 auto; text-align: center; }
+    .hero-stats { flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .hero-image, .problem-characters, .desktop-only { display: none !important; }
 
-    .hero-content {
-        flex-direction: column;
-        gap: 30px;
-    }
+    /* Gelembung HP (Kurangi & Adjust Posisi) */
+    .b1 { left: -5%; top: 10%; width: 40px; height: 40px; }
+    .b2 { left: 85%; top: 15%; width: 30px; height: 30px; }
+    .b3 { left: 5%; top: 40%; width: 50px; height: 50px; opacity: 0.5; } 
+    .b4, .b6, .b8, .b9 { display: none; }
+    .b5 { left: 80%; top: 50%; width: 45px; height: 45px; }
+    .b7 { left: 10%; top: 80%; width: 35px; height: 35px; }
+    .b10 { left: 85%; top: 85%; width: 40px; height: 40px; }
 
-    /* Hilangkan Gambar Hero & Karakter Problem di HP */
-    .hero-image, 
-    .problem-characters,
-    .desktop-only {
-        display: none !important;
-    }
-
-    /* Judul Hero */
-    .hero-text h1 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-    }
-
-    /* Tombol Hero Atas Bawah */
-    .hero-cta {
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .hero-cta a {
-        width: 100%;
-        display: block;
-        text-align: center;
-    }
-
-    /* 3. RAPIDKAN SEMUA GRID JADI 1 KOLOM */
-    .features-grid, 
-    .pricing-grid, 
-    .problem-grid,
-    .testimonials-grid, /* Note: perhatikan nama classnya di HTML */
-    .testimonial-grid,
-    .steps-grid {
-        grid-template-columns: 1fr; /* Paksa 1 kolom */
-        display: grid;
-        gap: 20px;
-    }
-
-    /* Khusus Testimonial & Problem biar gak gepeng */
-    .problem-grid, .testimonial-grid {
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Footer */
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
+    /* Grid 1 Kolom */
+    .features-grid, .pricing-grid, .steps-grid, .footer-content { grid-template-columns: 1fr; gap: 30px; }
+    .problem-grid, .testimonial-grid { display: flex; flex-direction: column; gap: 30px; }
+    .footer-content { text-align: center; }
     .step-arrow { display: none; }
 }
