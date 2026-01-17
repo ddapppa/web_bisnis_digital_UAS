@@ -662,40 +662,122 @@ section {
     color: var(--text-light);
 }
 
+/* MOBILE RESPONSIVE FIX (TIMPA BAGIAN BAWAH) */
+
 @media screen and (max-width: 1023px) {
+    /* 1. HILANGKAN ELEMEN PENGGANGGU DI HP */
     .problem-characters,
     .desktop-only,
     .char-left,
     .char-right,
     .question-mark {
-        display: none !important;    
-        visibility: hidden !important; 
-        opacity: 0 !important;       
-        width: 0 !important;         
-        height: 0 !important;       
-        pointer-events: none !important; 
-        position: absolute !important; 
-        z-index: -9999 !important;    
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        z-index: -9999 !important;
     }
 
-    /* 2. RESPONSIF NAVIGASI & HERO */
-    .navbar { padding: 15px 0; }
-    .nav-menu { display: none; }
-    
-    .hero { padding: 40px 0; min-height: auto; text-align: center; }
-    .hero-content { grid-template-columns: 1fr; gap: 30px; }
-    
-    .hero-cta { flex-direction: column; width: 100%; gap: 15px; }
-    .hero-cta .btn-primary, .hero-cta .btn-secondary { width: 100%; }
+    .container {
+        padding: 0 20px; 
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 
-    /* 3. GRID RESPONSIF (Biar Gak Gepeng) */
+    /* 3. HERO SECTION (Header Utama) */
+    .hero {
+        padding: 60px 0 40px;
+        text-align: center;
+        height: auto; 
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; 
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .hero-text .subheadline {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    /* Tombol di Hero */
+    .hero-cta {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-cta .btn-primary, 
+    .hero-cta .btn-secondary {
+        width: 100%; 
+        max-width: 300px; 
+        display: block;
+    }
+
+    /* Stats (Angka-angka) */
+    .hero-stats {
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .problem {
+        padding: 40px 0;
+        overflow: hidden;
+    }
+
+    .problem-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .problem-item {
+        width: 100%;
+        margin: 0;
+    }
+
     .features-grid, 
     .pricing-grid, 
-    .testimonial-grid, 
-    .problem-grid,
+    .testimonial-grid,
     .steps-grid {
-        display: flex; 
-        flex-direction: column; 
-        gap: 30px; 
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    
+    .step-arrow {
+        display: none; 
+    }
+    
+    .step-card {
+        margin-bottom: 20px;
+    }
+
+    /* 7. FOOTER */
+    .footer-content {
+        grid-template-columns: 1fr; 
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        align-items: center;
     }
 }
