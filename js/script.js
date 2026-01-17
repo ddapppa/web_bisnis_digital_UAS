@@ -1,776 +1,106 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #2196F3;
-    --primary-dark: #1976D2;
-    --primary-light: #E3F2FD;
-    --secondary-color: #FFA726;
-    --text-dark: #212121;
-    --text-light: #757575;
-    --white: #FFFFFF;
-    --bg-light: #F5F5F5;
-    --shadow: 0 4px 6px rgba(0,0,0,0.1);
-    --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* BUTTONS */
-.btn-primary {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-color);
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.btn-primary.btn-large {
-    padding: 16px 40px;
-    font-size: 1.1rem;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--primary-color);
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-color);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-light);
-}
-
-.btn-outline {
-    background: transparent;
-    color: var(--primary-color);
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-color);
-    width: 100%;
-    text-align: center;
-}
-
-.btn-outline:hover {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-/* NAVIGATION */
-.navbar {
-    background: var(--white);
-    padding: 20px 0;
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo h2 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-menu a {
-    color: var(--text-dark);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-    color: var(--primary-color);
-}
-
-/* HERO SECTION */
-.hero {
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
-    padding: 80px 0;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden; 
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    position: relative;
-    z-index: 2; 
-}
-
-.hero-text .badge {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.hero-text h1 {
-    font-size: 3.5rem;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-.hero-text .subheadline {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    margin-bottom: 30px;
-}
-
-.hero-cta {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.hero-stats {
-    display: flex;
-    gap: 40px;
-}
-
-.stat-item h3 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-
-.stat-item p {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* SECTION STYLES */
-section {
-    padding: 80px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-badge {
-    background: var(--primary-color); 
-    color: #FFFFFF; 
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* PROBLEM SECTION */
-.problem {
-    background: var(--bg-light);
-    position: relative;
-    /* overflow: hidden; -> DIHAPUS biar aman di HP */
-}
-
-/* Default Mobile: Sembunyikan Karakter */
-.desktop-only { display: none; }
-.problem-characters { display: none; }
-
-
-.problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    position: relative;
-    z-index: 2;
-}
-
-.problem-item {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.problem-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Container Icon Silang Tumpul */
-.problem-icon.cross-rounded {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 15px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Garis Pertama (Miring Kanan) */
-.problem-icon.cross-rounded::before {
-    content: '';
-    position: absolute;
-    width: 8px; 
-    height: 100%; 
-    background-color: var(--primary-color); 
-    border-radius: 10px; 
-    transform: rotate(45deg);
-}
-
-/* Garis Kedua (Miring Kiri) */
-.problem-icon.cross-rounded::after {
-    content: '';
-    position: absolute;
-    width: 8px; 
-    height: 100%; 
-    background-color: var(--primary-color);
-    border-radius: 10px; 
-    transform: rotate(-45deg);
-}
-
-
-.problem-item h3 {
-    color: var(--text-dark);
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.problem-item p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
-
-/* FEATURES SECTION */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
-}
-
-.feature-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-}
-
-.feature-card h3 {
-    color: var(--text-dark);
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.feature-card p {
-    color: var(--text-light);
-}
-
-.how-it-works {
-    background: var(--primary-light);
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr;
-    gap: 20px;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.step-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    position: relative;
-}
-
-.step-number {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary-color);
-    color: var(--white);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.step-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-}
-
-.step-card h3 {
-    margin-bottom: 15px;
-    color: var(--text-dark);
-    font-weight: 600;
-}
-
-.step-card p {
-    color: var(--text-light);
-}
-
-.step-arrow {
-    font-size: 3rem;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* PRICING SECTION */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.pricing-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.pricing-card.featured {
-    border-color: var(--primary-color);
-    transform: scale(1.05);
-}
-
-.popular-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--secondary-color);
-    color: var(--white);
-    padding: 6px 20px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.pricing-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-.price {
-    margin-bottom: 30px;
-}
-
-.price .currency {
-    font-size: 1.2rem;
-    color: var(--text-light);
-}
-
-.price .amount {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.price .period {
-    font-size: 1rem;
-    color: var(--text-light);
-}
-
-.pricing-features {
-    list-style: none;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-.pricing-features li {
-    padding: 12px 0;
-    color: var(--text-dark);
-    border-bottom: 1px solid var(--bg-light);
-}
-
-/* TESTIMONIALS */
-.testimonials {
-    background: var(--bg-light);
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-.rating {
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.testimonial-card p {
-    color: var(--text-dark);
-    font-style: italic;
-    margin-bottom: 20px;
-    line-height: 1.7;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.author-avatar {
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.testimonial-author h4 {
-    color: var(--text-dark);
-    margin-bottom: 3px;
-    font-weight: 600;
-}
-
-.testimonial-author span {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-/* CTA SECTION */
-.cta-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--white);
-    text-align: center;
-}
-
-.cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.cta-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.cta-section .btn-primary {
-    background: var(--white);
-    color: var(--primary-color);
-}
-
-.cta-section .btn-primary:hover {
-    background: var(--bg-light);
-}
-
-.cta-section .btn-secondary {
-    border-color: var(--white);
-    color: var(--white);
-}
-
-.cta-section .btn-secondary:hover {
-    background: var(--white);
-    color: var(--primary-color);
-}
-
-.cta-note {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* FOOTER */
-.footer {
-    background: var(--text-dark);
-    color: var(--white);
-    padding: 60px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-col h3 {
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.footer-col h4 {
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.footer-col p {
-    color: var(--text-light);
-    line-height: 1.8;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-col ul li a:hover {
-    color: var(--primary-color);
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.social-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: var(--text-light);
-}
-/* =========================================
-   MOBILE RESPONSIVE FIX (NO BURGER VERSION)
-   ========================================= */
-
-@media screen and (max-width: 1023px) {
-    /* 1. NAVBAR: Logo Kiri, Tombol Kanan, Menu Tengah HILANG */
-    .navbar {
-        padding: 15px 0;
+// LAUNDRYKLIK - JAVASCRIPT INTERACTIVITY
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar shadow effect on scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    } else {
+        navbar.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
     }
+});
 
-    .nav-wrapper {
-        display: flex;
-        justify-content: space-between; /* Logo dikiri, tombol dikanan */
-        align-items: center;
-        width: 100%;
-    }
+// Animation on scroll (Fade in effect)
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
-    /* Hilangkan menu text (Home, Fitur, dll) di HP */
-    .nav-menu {
-        display: none !important;
-    }
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
 
-    /* Logo Agak Kecil Dikit */
-    .logo h2 {
-        font-size: 1.2rem; 
-        margin: 0;
-    }
+// Apply animation to cards
+document.querySelectorAll('.feature-card, .step-card, .pricing-card, .testimonial-card, .problem-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+});
 
-    /* Tombol Daftar Kecilin Dikit Biar Muat */
-    .btn-primary.nav-btn {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-
-    /* 2. HERO SECTION */
-    .hero {
-        padding-top: 30px;
-        text-align: center;
-        margin-top: 0;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    /* Hilangkan Gambar Hero & Karakter Problem di HP */
-    .hero-image, 
-    .problem-characters,
-    .desktop-only {
-        display: none !important;
-    }
-
-    /* Judul Hero */
-    .hero-text h1 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-    }
-
-    /* Tombol Hero Atas Bawah */
-    .hero-cta {
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .hero-cta a {
-        width: 100%;
-        display: block;
-        text-align: center;
-    }
-
-    /* 3. RAPIDKAN SEMUA GRID JADI 1 KOLOM */
-    .features-grid, 
-    .pricing-grid, 
-    .problem-grid,
-    .testimonials-grid, /* Note: perhatikan nama classnya di HTML */
-    .testimonial-grid,
-    .steps-grid {
-        grid-template-columns: 1fr; /* Paksa 1 kolom */
-        display: grid;
-        gap: 20px;
-    }
-
-    /* Khusus Testimonial & Problem biar gak gepeng */
-    .problem-grid, .testimonial-grid {
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Footer */
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+// Counter animation untuk hero stats
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
     
-    .step-arrow { display: none; }
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target.toString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toString();
+        }
+    }, 16);
 }
+
+// Trigger counter animation when hero section visible
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumbers = document.querySelectorAll('.stat-item h3');
+            statNumbers.forEach(stat => {
+                const text = stat.textContent;
+                if (text.includes('+')) {
+                    const number = parseInt(text.replace('+', '').replace('★', ''));
+                    if (!isNaN(number)) {
+                        stat.textContent = '0';
+                        animateCounter(stat, number);
+                        setTimeout(() => {
+                            stat.textContent = text;
+                        }, 2100);
+                    }
+                }
+            });
+            heroObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+    heroObserver.observe(heroSection);
+}
+
+// Form handling untuk CTA buttons (Demo alert)
+document.querySelectorAll('.btn-primary, .btn-secondary, .btn-outline').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#daftar' || href === '#' || href === '') {
+            e.preventDefault();
+            alert('🎉 Terima kasih! Fitur pendaftaran akan segera aktif.\n\nUntuk demo, hubungi:\n📱 WhatsApp: +62 812-3456-7890\n📧 Email: info@laundryklik.com');
+        }
+    });
+});
+
+console.log('✅ LaundryKlik Landing Page berhasil dimuat! 🧺');
+
