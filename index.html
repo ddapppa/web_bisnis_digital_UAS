@@ -6,33 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="LaundryKlik - Platform laundry modern untuk mahasiswa dengan antar-jemput gratis">
     <title>LaundryKlik</title>
-    <link rel="icon" type="image/png" href="images/air-air.png">
+    <!-- Ganti icon ini dengan path yang benar jika punya -->
+    <link rel="icon" type="image/png" href="images/air-air.png"> 
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
-
-
-
 <body>
 
     <!-- NAVIGATION BAR -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <h2>💧 LaundryKlik</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#fitur">Fitur</a></li>
-                    <li><a href="#cara-kerja">Cara Kerja</a></li>
-                    <li><a href="#paket">Paket</a></li>
-                    <li><a href="#testimoni">Testimoni</a></li>
-                </ul>
-                <a href="#daftar" class="btn-primary">Daftar Sekarang</a>
+    <nav class="navbar container">
+        <div class="nav-logo">💧 LaundryKlik</div>
+
+        <!-- Menu Link (Dropdown di HP) -->
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#fitur">Fitur</a></li>
+            <li><a href="#cara-kerja">Cara Kerja</a></li>
+            <li><a href="#paket">Paket</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+        </ul>
+
+        <!-- Tombol & Burger (Wrapper Kanan) -->
+        <div class="nav-actions">
+            <!-- Tombol Daftar (Muncul di Desktop & HP) -->
+            <a href="#daftar" class="btn-primary nav-btn">Daftar Sekarang</a>
+            
+            <!-- Ikon Burger (Hanya muncul di HP via CSS) -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
@@ -48,10 +54,9 @@
                         bersih wangi dalam 24 jam. Hemat waktu kamu!</p>
 
                     <!-- CTA BUTTONS -->
-                    <div class="hero-cta" style="display: flex; align-items: center; gap: 15px;">
-                        <a href="#daftar" class="btn-primary btn-large" style="white-space: nowrap;">Daftar & Dapat
-                            Voucher 3kg</a>
-                        <a href="#cara-kerja" class="btn-secondary" style="white-space: nowrap;">Lihat Cara Kerja</a>
+                    <div class="hero-cta">
+                        <a href="#daftar" class="btn-primary btn-large">Daftar & Dapat Voucher 3kg</a>
+                        <a href="#cara-kerja" class="btn-secondary">Lihat Cara Kerja</a>
                     </div>
 
                     <div class="hero-stats">
@@ -69,23 +74,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-image" style="display: flex; justify-content: flex-end; align-items: center;">
+                <!-- Gambar Hero (Optional: CSS akan handle hide/show di mobile) -->
+                <div class="hero-image desktop-only">
                     <img src="images/laundry.jpg" alt="Foto Laundry"
-                        style="width: 90%; max-width: 500px; border-radius: 30px; box-shadow: 20px 20px 60px rgba(33, 150, 243, 0.15);">
+                        style="width: 100%; max-width: 500px; border-radius: 30px; box-shadow: 20px 20px 60px rgba(33, 150, 243, 0.15);">
                 </div>
             </div>
         </div>
 
         <div class="bubbles-container">
-            <div class="bubble b1"></div>
-            <div class="bubble b2"></div>
-            <div class="bubble b3"></div>
-            <div class="bubble b4"></div>
-            <div class="bubble b5"></div>
-            <div class="bubble b6"></div>
-            <div class="bubble b7"></div>
-            <div class="bubble b8"></div>
-            <div class="bubble b9"></div>
+            <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div>
+            <div class="bubble b4"></div><div class="bubble b5"></div><div class="bubble b6"></div>
+            <div class="bubble b7"></div><div class="bubble b8"></div><div class="bubble b9"></div>
             <div class="bubble b10"></div>
         </div>
     </section>
@@ -93,20 +93,17 @@
     <!-- PROBLEM STATEMENT SECTION -->
     <section class="problem">
         <div class="container">
+            <!-- Karakter & Tanda Tanya (Hanya Desktop) -->
             <div class="problem-characters desktop-only">
-                <!-- Karakter Cewek Kiri -->
                 <div class="char-left">
                     <img src="images/wanita.png" alt="Bingung">
-                    <!-- 3 Tanda Tanya Cewek -->
                     <div class="question-mark q-small q1">?</div>
                     <div class="question-mark q-medium q2">?</div>
                     <div class="question-mark q-large q3">?</div>
                 </div>
-
-                <!-- Karakter Cowok Kanan -->
-                <div class="char-right">
-                </div>
+                <div class="char-right"></div>
             </div>
+            
             <div class="section-header">
                 <span class="section-badge">Permasalahan</span>
                 <h2>Masih Repot Ngurus Laundry?</h2>
@@ -138,8 +135,7 @@
         </div>
     </section>
 
-
-    <!-- FEATURES SECTION (DI-UPDATE: 6 FITUR RAPI) -->
+    <!-- FEATURES SECTION -->
     <section id="fitur" class="features">
         <div class="container">
             <div class="section-header">
@@ -285,10 +281,9 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="rating">★★★★★</div>
-                    <p>"LaundryKlik bener-bener penyelamat! Gak perlu repot antar cucian lagi, fokus buat kuliah aja."
-                    </p>
+                    <p>"LaundryKlik bener-bener penyelamat! Gak perlu repot antar cucian lagi, fokus buat kuliah aja."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
+                        <div class="author-avatar">D</div>
                         <div>
                             <h4>Daffa Nayottama</h4>
                             <span>Mahasiswa UTY</span>
@@ -299,7 +294,7 @@
                     <div class="rating">★★★★★</div>
                     <p>"Harganya jelas, pelayanan cepat, dan baju wangi banget. Recommend buat anak kos!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
+                        <div class="author-avatar">N</div>
                         <div>
                             <h4>Nharnia</h4>
                             <span>Mahasiswa Psikologi UGM</span>
@@ -310,7 +305,7 @@
                     <div class="rating">★★★★★</div>
                     <p>"Paket berlangganan hemat banget! Sebulan cuma 150rb udah bisa cuci unlimited."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">B</div>
+                        <div class="author-avatar">V</div>
                         <div>
                             <h4>Violeta</h4>
                             <span>Mahasiswa Ekonomi UNY</span>
@@ -374,8 +369,26 @@
             </div>
         </div>
     </footer>
-
     <script src="js/script.js"></script>
-</body>
+    <script>
+        // Logika Burger Menu Langsung
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        
+        if (hamburger) {
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
 
+            // Tutup menu saat link diklik
+            document.querySelectorAll(".nav-menu li a").forEach(link => {
+                link.addEventListener("click", () => {
+                    hamburger.classList.remove("active");
+                    navMenu.classList.remove("active");
+                });
+            });
+        }
+    </script>
+</body>
 </html>
